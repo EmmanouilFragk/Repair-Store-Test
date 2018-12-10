@@ -12,7 +12,7 @@ public interface OwnerRepository extends JpaRepository <Owner, Long> {
 
     Optional<Owner> findOwnerById(Long id);
 
-    List<Owner> getAllOwnersByAddress(String address);
+    Optional<Owner> findOwnerByTaxRegistrationNumber(String tax_reg_num);
 
     void deleteById(Long id);
 
