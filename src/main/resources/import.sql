@@ -10,6 +10,14 @@
 --INSERT INTO USER (id, firstname, lastname, email, username, password, role) VALUES ('123', 'John', 'Doe', 'john@mail.com', 'johnD', 'pass1234', 'ROLE_USER');
 --INSERT INTO USER (id, firstname, lastname, email, username, password, role) VALUES ('124', 'Jane', 'Doe', 'jane@mail.com', 'janeD', 'pass1234', 'ROLE_ADMIN');
 
+INSERT INTO Repairs (Description,Userid,Dayofrepair,Repairstatus,Repairtype,Servicecost,Platenumber)
+			VALUES ("ladia",2,'2018-11-26 15:15:00','ToDo','Small',88.45,"KYX-8888");
+INSERT INTO Repairs (Description,Userid,Dayofrepair,Repairstatus,Repairtype,Servicecost,Platenumber)
+			VALUES ("diskoplato",3,'2018-10-26 17:15:00','ToDo','Small',98.50,"PKX-8745");
+INSERT INTO Repairs (Description,Userid,Dayofrepair,Repairstatus,Repairtype,Servicecost,Platenumber)
+			VALUES ("lastiha",2,'2018-10-20 16:15:00','ToDo','Big',98.00,"TYR-9845");
+
+
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123456789','George', 'Papadopoulos', 'Kifisias 15', 'gpap@email.com', '1234', 'Toyota', 'ABC-1234', 'Admin');
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('223456789','Giannis', 'Papadopoulos', 'Kifisias 15', 'gianpap@email.com', '1234', 'Toyota', 'ABD-1234', 'Owner');
 
