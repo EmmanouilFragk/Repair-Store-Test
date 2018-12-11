@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "repairs")
+@Table(name = "Repairs")
 public class Repair implements Serializable {
 
 
@@ -38,8 +38,8 @@ public class Repair implements Serializable {
         private String plateNumber;
 
         @ManyToOne(optional=false, cascade = CascadeType.REMOVE)
-        @JoinColumn(name="userid",referencedColumnName="userid")
-        private User user;
+        @JoinColumn(name="owner_id",referencedColumnName="owner_id")
+        private Owner owner;
 
 
         public Repair() {
@@ -63,7 +63,7 @@ public class Repair implements Serializable {
                 this.repairType = repairType;
                 this.serviceCost = serviceCost;
                 this.plateNumber = plateNumber;
-                this.user = user;
+                this.owner = owner;
         }
 
 
@@ -123,12 +123,12 @@ public class Repair implements Serializable {
                 this.plateNumber = plateNumber;
         }
 
-        public User getUser() {
-                return user;
+        public Owner getOwner() {
+                return owner;
         }
 
-        public void setUser(User user) {
-                this.user = user;
+        public void setOwner(Owner owner) {
+                this.owner = owner;
         }
 
 
