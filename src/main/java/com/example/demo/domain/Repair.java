@@ -7,12 +7,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Repairs")
-public class Repair implements Serializable {
+public class Repair {
 
 
         @Id
         @Column(name = "repairid", nullable = false)
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long repairID;
 
 
@@ -37,33 +37,12 @@ public class Repair implements Serializable {
         @Column(name = "platenumber",length = 8)
         private String plateNumber;
 
-        @ManyToOne(optional=false, cascade = CascadeType.REMOVE)
+        @ManyToOne(optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
         @JoinColumn(name="owner_id",referencedColumnName="owner_id")
         private Owner owner;
 
 
         public Repair() {
-        }
-
-        public Repair(Long repairID, String description, LocalDateTime dayOfRepair, String repairStatus, String repairType, Double serviceCost, String plateNumber) {
-                this.repairID = repairID;
-                this.description = description;
-                this.dayOfRepair = dayOfRepair;
-                this.repairStatus = repairStatus;
-                this.repairType = repairType;
-                this.serviceCost = serviceCost;
-                this.plateNumber = plateNumber;
-        }
-
-        public Repair(Long repairID, String description, LocalDateTime dayOfRepair, String repairStatus, String repairType, Double serviceCost, String plateNumber, User user) {
-                this.repairID = repairID;
-                this.description = description;
-                this.dayOfRepair = dayOfRepair;
-                this.repairStatus = repairStatus;
-                this.repairType = repairType;
-                this.serviceCost = serviceCost;
-                this.plateNumber = plateNumber;
-                this.owner = owner;
         }
 
 
