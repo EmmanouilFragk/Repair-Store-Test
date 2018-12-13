@@ -36,7 +36,7 @@
                 <li><a href="index.ftl">Home</a></li>
                 <li><a href="owners.ftl">Owners</a></li>
                 <li><a href="listings.ftl">Repairs List</a></li>
-                <li><a href="./login.html">Logout</a></li>
+                <li><a href="login.ftl">Logout</a></li>
             </ul>
 
             <form action="/search" class="navbar-form navbar-right" id="search">

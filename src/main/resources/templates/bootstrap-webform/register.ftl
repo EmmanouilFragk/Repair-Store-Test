@@ -32,7 +32,7 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="./login.html">Login</a></li>
+                <li><a href="login.ftl">Login</a></li>
             </ul>
         </div>
     </div>
