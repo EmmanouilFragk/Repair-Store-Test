@@ -4,6 +4,7 @@ import com.example.demo.domain.Author;
 import com.example.demo.service.AuthorService;
 import com.example.demo.service.BookService;
 import com.example.demo.service.OwnerService;
+import com.example.demo.service.RepairService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import java.util.Optional;
 public class DemoApplication implements CommandLineRunner {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
+    private RepairService repairService;
     private OwnerService ownerService;
 
     @Autowired
