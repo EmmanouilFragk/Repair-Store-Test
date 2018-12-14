@@ -2,12 +2,15 @@ package com.example.demo.service;
 
 
 import com.example.demo.domain.Owner;
+import com.example.demo.mappers.OwnerToOwnerModelMapper;
+import com.example.demo.models.OwnerModel;
 import com.example.demo.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class OwnerServiceImpl implements OwnerService {
@@ -15,14 +18,17 @@ public class OwnerServiceImpl implements OwnerService {
     @Autowired
     private OwnerRepository ownerRepository;
 
+    @Autowired
+    private OwnerToOwnerModelMapper mapper;
+
     @Override
     public Optional<Owner> findOwnerById(Long id) {
         return ownerRepository.findOwnerById(id);
     }
 
     @Override
-    public Optional<Owner> findOwnerByTaxRegistrationNumber(String tax_reg_num) {
-        return ownerRepository.findOwnerByTaxRegistrationNumber(tax_reg_num);
+    public List<Owner> getAllOwnersByAddress(String address) {
+        return ownerRepository.getAllOwnersByAddress(address);
     }
 
     @Override
@@ -30,4 +36,12 @@ public class OwnerServiceImpl implements OwnerService {
         return ownerRepository.findOwnerByEmail(email);
     }
 
+    @Override
+    public List<OwnerModel> findAll() {
+        return ownerRepository
+                .findAll()
+                .stream()
+                .map(owner -> mapper.mapToOwnerModel(owner))
+                .collect(Collectors.toList());
+    }
 }

@@ -39,8 +39,8 @@ public class Owner {
     private String carPlate;
 
     @Column(name = "user_type", length = MAX_NAME_LENGTH)
-    private String userType
-            ;
+    private String userType;
+
     public Long getId() {
         return id;
     }

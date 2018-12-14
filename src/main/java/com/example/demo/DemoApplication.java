@@ -32,50 +32,50 @@ public class DemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("=============================");
-        logger.info("====Finding Author by Id====");
-        Optional<Author> foundAuthor = authorService.findAuthor(3L);
-        foundAuthor.ifPresent(author -> logger.info(author.toString()));
-        logger.info("=============================");
-        logger.info("=============================");
-
-
-        logger.info("=============================");
-        logger.info("====Getting all authors====");
-        authorService.getAllAuthors().forEach(author -> logger.info(author.toString()));
-        logger.info("=============================");
-        logger.info("=============================");
-
-        logger.info("=============================");
-        logger.info("====Finding Author by first name and last name====");
-        authorService.findAuthorByFirstNameAndLastName("Alexandros", "Papadiamantis").ifPresent(author -> logger.info(author.toString()));
-        logger.info("=============================");
-        logger.info("=============================");
-
-
-        logger.info("=============================");
-        logger.info("====Finding Book by Id====");
-        bookService.findBook(3L).ifPresent(book -> logger.info(book.toString()));
-        logger.info("=============================");
-        logger.info("=============================");
-
-        logger.info("=============================");
-        logger.info("====Getting all books====");
-        bookService.findAll().forEach(book -> logger.info(book.toString()));
-        logger.info("=============================");
-        logger.info("=============================");
-
-        logger.info("=============================");
-        logger.info("====Finding Books by author====");
-        foundAuthor.ifPresent(author -> bookService.findByAuthor(author).forEach(book -> logger.info(book.toString())));
-        logger.info("=============================");
-        logger.info("=============================");
-
-        logger.info("=============================");
-        logger.info("====Finding Book by title====");
-        bookService.findByTitle("The").forEach(book -> logger.info(book.toString()));
-        logger.info("=============================");
-        logger.info("=============================");
+//        logger.info("=============================");
+//        logger.info("====Finding Author by Id====");
+//        Optional<Author> foundAuthor = authorService.findAuthor(3L);
+//        foundAuthor.ifPresent(author -> logger.info(author.toString()));
+//        logger.info("=============================");
+//        logger.info("=============================");
+//
+//
+//        logger.info("=============================");
+//        logger.info("====Getting all authors====");
+//        authorService.getAllAuthors().forEach(author -> logger.info(author.toString()));
+//        logger.info("=============================");
+//        logger.info("=============================");
+//
+//        logger.info("=============================");
+//        logger.info("====Finding Author by first name and last name====");
+//        authorService.findAuthorByFirstNameAndLastName("Alexandros", "Papadiamantis").ifPresent(author -> logger.info(author.toString()));
+//        logger.info("=============================");
+//        logger.info("=============================");
+//
+//
+//        logger.info("=============================");
+//        logger.info("====Finding Book by Id====");
+//        bookService.findBook(3L).ifPresent(book -> logger.info(book.toString()));
+//        logger.info("=============================");
+//        logger.info("=============================");
+//
+//        logger.info("=============================");
+//        logger.info("====Getting all books====");
+//        bookService.findAll().forEach(book -> logger.info(book.toString()));
+//        logger.info("=============================");
+//        logger.info("=============================");
+//
+//        logger.info("=============================");
+//        logger.info("====Finding Books by author====");
+//        foundAuthor.ifPresent(author -> bookService.findByAuthor(author).forEach(book -> logger.info(book.toString())));
+//        logger.info("=============================");
+//        logger.info("=============================");
+//
+//        logger.info("=============================");
+//        logger.info("====Finding Book by title====");
+//        bookService.findByTitle("The").forEach(book -> logger.info(book.toString()));
+//        logger.info("=============================");
+//        logger.info("=============================");
 
 
     }
