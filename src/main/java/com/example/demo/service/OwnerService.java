@@ -13,6 +13,5 @@ public interface OwnerService {
 
     List<OwnerModel> findAll();
 
-
     Optional<Owner> findOwnerByEmail(String email);
 }

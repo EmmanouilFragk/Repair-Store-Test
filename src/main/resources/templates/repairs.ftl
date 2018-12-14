@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <#include "partials/head.ftl">
-    <title>authors</title>
+    <title>Admin|Repairs</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-            <#include "content/ownersList.ftl">
+            <#include "content/repairs.ftl">
         </div>
     </div>
 </div>

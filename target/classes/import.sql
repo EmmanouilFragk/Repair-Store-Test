@@ -10,9 +10,6 @@
 --INSERT INTO USER (id, firstname, lastname, email, username, password, role) VALUES ('123', 'John', 'Doe', 'john@mail.com', 'johnD', 'pass1234', 'ROLE_USER');
 --INSERT INTO USER (id, firstname, lastname, email, username, password, role) VALUES ('124', 'Jane', 'Doe', 'jane@mail.com', 'janeD', 'pass1234', 'ROLE_ADMIN');
 
-
-
-
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123456789','George', 'Papadopoulos', 'Kifisias 15', 'gpap@email.com', '1234', 'Toyota', 'ABC-1234', 'Admin');
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('223456789','Giannis', 'Papadopoulos', 'Kifisias 17', 'gianpap@email.com', '1234', 'Nissan', 'ABD-1234', 'Owner');
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123456789','Antonis', 'Papadopoulos', 'Kifisias 19', 'apap@email.com', '1234', 'Audi', 'ABC-1984', 'Owner');

@@ -1,18 +1,50 @@
-package com.example.demo.models;
+package com.example.demo.domain;
 
-import com.example.demo.domain.Owner;
-
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import javax.persistence.*;
 
-public class RepairModel {
+
+@Entity
+@Table(name = "Repairs")
+public class Repair {
+
+
+    @Id
+    @Column(name = "repairid", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long repairID;
+
+
+    @Column(name = "description", length = 255)
     private String description;
+
+
+    @Column(name = "dayofrepair")
     private LocalDateTime dayOfRepair;
+
+
+    @Column(name = "repairstatus", length =30)
     private String repairStatus;
+
+
+    @Column(name = "repairtype", length = 30)
     private String repairType;
+
+    @Column(name="servicecost",precision=10, scale=2)
     private Double serviceCost;
+
+    @Column(name = "platenumber",length = 8)
     private String plateNumber;
+
+    @ManyToOne(optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name="owner_id",referencedColumnName="owner_id")
     private Owner owner;
+
+
+    public Repair() {
+    }
+
 
     public Long getRepairID() {
         return repairID;
@@ -78,13 +110,35 @@ public class RepairModel {
         this.owner = owner;
     }
 
-    public RepairModel(String description, LocalDateTime dayOfRepair, String repairStatus, String repairType, Double serviceCost, String plateNumber, Owner owner) {
-        this.description = description;
-        this.dayOfRepair = dayOfRepair;
-        this.repairStatus = repairStatus;
-        this.repairType = repairType;
-        this.serviceCost = serviceCost;
-        this.plateNumber = plateNumber;
-        this.owner = owner;
+
+    @Override
+    public String toString() {
+
+        return "Repair{" +
+
+                "RepairID=" + repairID +
+
+                ", Description=" + description +
+
+                ", DayOfRepair='" + dayOfRepair + '\'' +
+
+                ", RepairStatus='" + repairStatus + '\'' +
+
+                ", RepairType='" + repairType + '\'' +
+
+                ", ServiceCost='" + serviceCost + '\'' +
+
+
+
+                ", PlateNumber='" + plateNumber + '\'' +
+
+                ", PlateNumber='" + plateNumber + '\'' +
+
+                '}';
+
     }
+
+
+
+
 }

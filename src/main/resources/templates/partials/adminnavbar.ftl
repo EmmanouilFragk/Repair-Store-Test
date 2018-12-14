@@ -18,8 +18,6 @@
                 <li><a href="/repairs">Repairs</a></li>
             </ul>
 
-            <#include "search.ftl">
-
         </div>
     </div>
 </nav>

@@ -22,7 +22,7 @@ public class OwnerListController {
         public String authors(Model model) {
             List<OwnerModel> owners = ownerService.findAll();
             model.addAttribute(OWNER_ATTR, owners);
-            return "ownersList";
+            return "owners";
         }
 
 }
