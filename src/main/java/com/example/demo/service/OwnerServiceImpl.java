@@ -27,11 +27,6 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<Owner> getAllOwnersByAddress(String address) {
-        return ownerRepository.getAllOwnersByAddress(address);
-    }
-
-    @Override
     public Optional<Owner> findOwnerByEmail(String email) {
         return ownerRepository.findOwnerByEmail(email);
     }

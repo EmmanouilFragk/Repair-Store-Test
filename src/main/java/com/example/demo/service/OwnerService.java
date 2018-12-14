@@ -13,7 +13,6 @@ public interface OwnerService {
 
     List<OwnerModel> findAll();
 
-    List<Owner> getAllOwnersByAddress(String address);
 
     Optional<Owner> findOwnerByEmail(String email);
 }
