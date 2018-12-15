@@ -7,7 +7,8 @@ import java.time.LocalDateTime;
 public class RepairModel {
     private Long repairID;
     private String description;
-    private LocalDateTime dayOfRepair;
+    private LocalDateTime registrationDayOfRepair;
+    private LocalDateTime finishDayOfRepair;
     private String repairStatus;
     private String repairType;
     private Double serviceCost;
@@ -30,12 +31,20 @@ public class RepairModel {
         this.description = description;
     }
 
-    public LocalDateTime getDayOfRepair() {
-        return dayOfRepair;
+    public LocalDateTime getRegistrationDayOfRepair() {
+        return registrationDayOfRepair;
     }
 
-    public void setDayOfRepair(LocalDateTime dayOfRepair) {
-        this.dayOfRepair = dayOfRepair;
+    public void setRegistrationDayOfRepair(LocalDateTime registrationDayOfRepair) {
+        this.registrationDayOfRepair = registrationDayOfRepair;
+    }
+
+    public LocalDateTime getFinishDayOfRepair() {
+        return finishDayOfRepair;
+    }
+
+    public void setFinishDayOfRepair(LocalDateTime finishDayOfRepair) {
+        this.finishDayOfRepair = finishDayOfRepair;
     }
 
     public String getRepairStatus() {
@@ -78,9 +87,10 @@ public class RepairModel {
         this.owner = owner;
     }
 
-    public RepairModel(String description, LocalDateTime dayOfRepair, String repairStatus, String repairType, Double serviceCost, String plateNumber, Owner owner) {
+    public RepairModel(String description, LocalDateTime registrationDayOfRepair, LocalDateTime finishDayOfRepair, String repairStatus, String repairType, Double serviceCost, String plateNumber, Owner owner) {
         this.description = description;
-        this.dayOfRepair = dayOfRepair;
+        this.registrationDayOfRepair = registrationDayOfRepair;
+        this.finishDayOfRepair = finishDayOfRepair;
         this.repairStatus = repairStatus;
         this.repairType = repairType;
         this.serviceCost = serviceCost;

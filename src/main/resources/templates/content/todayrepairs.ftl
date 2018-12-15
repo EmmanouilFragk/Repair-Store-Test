@@ -3,12 +3,12 @@
     <tr>
 
         <th>Description</th>
-        <th>Day Of Repair</th>
+        <th>Registration Day</th>
+        <th>Finish Day</th>
         <th>Repair Status;</th>
         <th>Repair Type</th>
         <th>Service Cost</th>
         <th>Plate Number</th>
-        <th>Owner</th>
         <th></th>
     </tr>
     </thead>
@@ -18,12 +18,12 @@
         <tr>
 
         <td> ${repair.description}</td>
-        <td> ${repair.dayOfRepair}</td>
+        <td> ${repair.registrationDayOfRepair}</td>
+        <td> ${repair.finishDayOfRepair}</td>
         <td> ${repair.repairStatus}</td>
         <td> ${repair.repairType}</td>
         <td> ${repair.serviceCost}</td>
         <td> ${repair.plateNumber}</td>
-        <td> ${repair.owner}</td>
 
         <td class="text-right">
             <button class="btn btn-danger button-delete-confirmation" type="submit" value="Delete">Delete

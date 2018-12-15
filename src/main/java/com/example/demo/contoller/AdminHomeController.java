@@ -1,17 +1,20 @@
 package com.example.demo.contoller;
 
+import com.example.demo.domain.Repair;
 import com.example.demo.models.RepairModel;
 import com.example.demo.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.domain.User;
 import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.service.UserService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -26,5 +29,12 @@ public class AdminHomeController {
         List<RepairModel> repairs = repairService.findAll();
         model.addAttribute(REPAIR_ATTR, repairs);
         return "adminHome";
+    }
+
+    @GetMapping("/{id}")
+    public String ownerRepairs(@PathVariable(value="id") Long id, Model model) {
+        List<Repair> repairs = repairService.findRepairByOwnerId(id);
+        model.addAttribute(REPAIR_ATTR, repairs);
+        return "ownersrepair";
     }
 }

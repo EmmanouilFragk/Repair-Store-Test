@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.Owner;
+import com.example.demo.domain.Repair;
 import com.example.demo.mappers.RepairToRepairModelMapper;
 import com.example.demo.models.RepairModel;
 import com.example.demo.repository.RepairRepository;
@@ -24,7 +26,25 @@ public class RepairServiceImpl implements RepairService {
         return repairRepository
                 .findAll()
                 .stream()
-                .map(owner -> mapper.mapToRepairModel(owner))
+                .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<Repair> findRepairByOwnerId(Long id) {
+        return repairRepository.findRepairByOwnerId(id);
+    }
+
+//    @Override
+//    public List<Repair> findTop10ByDayOfRepair(LocalDate date) {
+//        return repairRepository.findTop10ByDayOfRepair(date);
+//    }
+//    @Override
+//    public List<RepairModel> findRepairOrderByDescription() {
+//        return repairRepository
+//                .findRepairOrderByDescription()
+//                .stream()
+//                .map(repair -> mapper.mapToRepairModel(repair))
+//                .collect(Collectors.toList());
+//    }
 }

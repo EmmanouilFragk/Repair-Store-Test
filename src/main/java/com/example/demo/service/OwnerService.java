@@ -9,9 +9,11 @@ import java.util.Optional;
 
 public interface OwnerService {
 
-    Optional<Owner> findOwnerById(Long id);
+    Owner findOwnerByUserName(String userName);
 
     List<OwnerModel> findAll();
 
     Optional<Owner> findOwnerByEmail(String email);
+
+
 }

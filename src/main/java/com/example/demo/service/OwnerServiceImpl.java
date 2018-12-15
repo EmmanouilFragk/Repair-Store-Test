@@ -22,8 +22,8 @@ public class OwnerServiceImpl implements OwnerService {
     private OwnerToOwnerModelMapper mapper;
 
     @Override
-    public Optional<Owner> findOwnerById(Long id) {
-        return ownerRepository.findOwnerById(id);
+    public Owner findOwnerByUserName(String userName) {
+        return ownerRepository.findOwnerByUserName(userName);
     }
 
     @Override
@@ -38,5 +38,13 @@ public class OwnerServiceImpl implements OwnerService {
                 .stream()
                 .map(owner -> mapper.mapToOwnerModel(owner))
                 .collect(Collectors.toList());
+    }
+
+    public Owner loginOwner(String userName, String password){
+        Owner owner = this.findOwnerByUserName(userName);
+        if (owner != null && owner.getPassword().equals(password)) {
+            return owner;
+        }
+        return null;
     }
 }
