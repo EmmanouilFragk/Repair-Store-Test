@@ -39,4 +39,13 @@ public class OwnerServiceImpl implements OwnerService {
                 .map(owner -> mapper.mapToOwnerModel(owner))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<OwnerModel> findByTaxRegistrationNumberOrEmail(String taxRegistrationNumber, String email){
+        return ownerRepository
+                .findByTaxRegistrationNumberOrEmail(taxRegistrationNumber, email)
+                .stream()
+                .map(owner -> mapper.mapToOwnerModel(owner))
+                .collect(Collectors.toList());
+    }
 }

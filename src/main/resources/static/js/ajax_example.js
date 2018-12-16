@@ -1,8 +1,8 @@
 (function ($) {
 
-    var API_URL = '/api/books';
-    var error_message = 'No books available right now.';
-    var $tableSelector = $('table#books');
+    var API_URL = '/api/owners';
+    var error_message = 'No owners available right now.';
+    var $tableSelector = $('table#owners');
 
     var $tableBody = $tableSelector.find('tbody');
 

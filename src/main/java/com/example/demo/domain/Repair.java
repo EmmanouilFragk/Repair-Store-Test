@@ -1,12 +1,14 @@
 package com.example.demo.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Repairs")
+@Table(name = "REPAIRS")
 public class Repair {
 
 
@@ -21,7 +23,8 @@ public class Repair {
 
 
     @Column(name = "dayofrepair")
-    private LocalDateTime dayOfRepair;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dayOfRepair;
 
 
     @Column(name = "repairstatus", length =30)
@@ -62,11 +65,11 @@ public class Repair {
         this.description = description;
     }
 
-    public LocalDateTime getDayOfRepair() {
+    public LocalDate getDayOfRepair() {
         return dayOfRepair;
     }
 
-    public void setDayOfRepair(LocalDateTime dayOfRepair) {
+    public void setDayOfRepair(LocalDate dayOfRepair) {
         this.dayOfRepair = dayOfRepair;
     }
 

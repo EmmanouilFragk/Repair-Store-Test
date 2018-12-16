@@ -1,3 +1,4 @@
+<#if repairs??>
 <h1 class="page-header">List of Repairs</h1>
 
 <table class="table table-striped">
@@ -5,12 +6,11 @@
     <tr>
 
         <th>Description</th>
-        <th>Day Of Repair</th>
-        <th>Repair Status;</th>
+        <th>Date of Repair</th>
+        <th>Repair Status</th>
         <th>Repair Type</th>
         <th>Service Cost</th>
         <th>Plate Number</th>
-        <th>Owner</th>
         <th></th>
     </tr>
     </thead>
@@ -25,15 +25,16 @@
         <td> ${repair.repairType}</td>
         <td> ${repair.serviceCost}</td>
         <td> ${repair.plateNumber}</td>
-        <td> ${repair.owner}</td>
 
         <td class="text-right">
-            <button class="btn btn-danger button-delete-confirmation" type="submit" value="Delete">Delete
+          <!--  <button class="btn btn-danger button-delete-confirmation" type="submit" value="Delete">Delete
             </button>
-            <button class="btn btn-success" type="submit" value="Edit">Edit</button>
+            <button class="btn btn-success" type="submit" value="Edit">Edit</button> -->
+            <a class="btn" href="/repair/repairs/${repair.repairID}">Edit</a>
         </td>
         </tr>
     </#list>
 
     </tbody>
 </table>
+</#if>

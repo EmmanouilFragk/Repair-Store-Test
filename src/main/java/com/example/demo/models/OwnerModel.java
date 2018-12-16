@@ -10,8 +10,9 @@ public class OwnerModel {
     private String carBrand;
     private String carPlate;
     private String userType;
+    private Long id;
 
-    public OwnerModel(String taxRegistrationNumber, String firstName, String lastName, String address, String email, String password, String carBrand, String carPlate, String userType) {
+    public OwnerModel(String taxRegistrationNumber, String firstName, String lastName, String address, String email, String password, String carBrand, String carPlate, String userType, Long id) {
         this.taxRegistrationNumber = taxRegistrationNumber;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,6 +22,7 @@ public class OwnerModel {
         this.carBrand = carBrand;
         this.carPlate = carPlate;
         this.userType = userType;
+        this.id = id;
     }
 
     public String getTaxRegistrationNumber() {
@@ -94,4 +96,13 @@ public class OwnerModel {
     public void setUserType(String userType) {
         this.userType = userType;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 }

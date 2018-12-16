@@ -12,23 +12,23 @@
 
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123456789','George', 'Papadopoulos', 'Kifisias 15', 'gpap@email.com', '1234', 'Toyota', 'ABC-1234', 'Admin');
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('223456789','Giannis', 'Papadopoulos', 'Kifisias 17', 'gianpap@email.com', '1234', 'Nissan', 'ABD-1234', 'Owner');
-INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123456789','Antonis', 'Papadopoulos', 'Kifisias 19', 'apap@email.com', '1234', 'Audi', 'ABC-1984', 'Owner');
+INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123456900','Antonis', 'Papadopoulos', 'Kifisias 19', 'apap@email.com', '1234', 'Audi', 'ABC-1984', 'Owner');
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('223456789','Manos', 'Papadopoulos', 'Kifisias 21', 'mpap@email.com', '1234', 'BMW', 'AGD-1234', 'Owner');
-INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123456789','Eleni', 'Papadopoulou', 'Kifisias 23', 'epap@email.com', '1234', 'Toyota', 'ASC-7834', 'Owner');
+INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123478902','Eleni', 'Papadopoulou', 'Kifisias 23', 'epap@email.com', '1234', 'Toyota', 'ASC-7834', 'Owner');
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('223456789','Charis', 'Papadopoulos', 'Kifisias 25', 'chpap@email.com', '1234', 'Toyota', 'ACD-6534', 'Owner');
-INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123456789','Leonidas', 'Papadopoulos', 'Kifisias 125', 'lpap@email.com', '1234', 'Toyota', 'MBC-8734', 'Owner');
+INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('123678901','Leonidas', 'Papadopoulos', 'Kifisias 125', 'lpap@email.com', '1234', 'Toyota', 'MBC-8734', 'Owner');
 INSERT INTO OWNER (tax_reg_num, firstname, lastname, address, email, password, car_brand, car_plate, user_type) VALUES ('223456789','Vasilis', 'Papadopoulos', 'Kifisias 157', 'vpap@email.com', '1234', 'Toyota', 'FBD-4574', 'Owner');
 
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',1);
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',2);
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',2);
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',4);
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',5);
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',5);
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',6);
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',3);
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',1);
-INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26 15:15:00','ToDo','Small',88.45,'KYX-8888',1);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-20','ToDo','Small',88.45,'KYX-8888',1);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-21','ToDo','Small',88.45,'KYX-8888',2);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-22','ToDo','Small',88.45,'KYX-8888',2);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-23','ToDo','Small',88.45,'KYX-8888',4);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-24','ToDo','Small',88.45,'KYX-8888',5);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-25','ToDo','Small',88.45,'KYX-8888',5);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-26','ToDo','Small',88.45,'KYX-8888',6);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-27','ToDo','Small',88.45,'KYX-8888',3);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-28','ToDo','Small',88.45,'KYX-8888',1);
+INSERT INTO Repairs (description,dayofrepair,repairstatus,repairtype,servicecost,platenumber,owner_id) VALUES ('ladia','2018-11-29','ToDo','Small',88.45,'KYX-8888',1);
 
 
 INSERT INTO AUTHOR (firstname, lastname) VALUES ('Leo', 'Tolstoy');

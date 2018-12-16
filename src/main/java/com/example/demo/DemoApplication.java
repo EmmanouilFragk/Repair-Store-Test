@@ -4,6 +4,7 @@ import com.example.demo.domain.Author;
 import com.example.demo.service.AuthorService;
 import com.example.demo.service.BookService;
 import com.example.demo.service.OwnerService;
+import com.example.demo.service.RepairService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class DemoApplication implements CommandLineRunner {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    @Autowired
     private OwnerService ownerService;
 
     @Autowired
@@ -25,6 +27,11 @@ public class DemoApplication implements CommandLineRunner {
 
     @Autowired
     private BookService bookService;
+
+    @Autowired
+    private RepairService repairService;
+
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
