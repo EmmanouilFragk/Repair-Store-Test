@@ -3,10 +3,10 @@
 <table class="table table-striped">
     <thead>
     <tr>
-
+        <th>Id</th>
         <th>Tax Registration Number</th>
         <th>FirstName</th>
-        <th>LastName;</th>
+        <th>LastName</th>
         <th>Address</th>
         <th>Email</th>
         <th>Car Brand</th>
@@ -19,7 +19,7 @@
 
     <#list owners as owner>
         <tr>
-
+        <td> ${owner.id}</td>
         <td> ${owner.taxRegistrationNumber}</td>
         <td> ${owner.firstName}</td>
         <td> ${owner.lastName}</td>
@@ -31,12 +31,16 @@
 
 
         <td class="text-right">
-            <button class="btn btn-danger button-delete-confirmation" type="submit" value="Delete">Delete
-            </button>
+            <a class="btn btn-danger button-delete-confirmation" href="/owners/${owner.id}/delete">Delete
+            </a>
             <button class="btn btn-success" type="submit" value="Edit">Edit</button>
         </td>
         </tr>
     </#list>
 
     </tbody>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <a class="btn pull-right" href="/owners/create">Δημιουργεία Νέου</a>
+    </div>
 </table>

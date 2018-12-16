@@ -40,11 +40,21 @@ public class OwnerServiceImpl implements OwnerService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public Owner createOrUpdateOwner(Owner owner) {
+        return ownerRepository.save(owner);
+    }
+
     public Owner loginOwner(String userName, String password){
         Owner owner = this.findOwnerByUserName(userName);
         if (owner != null && owner.getPassword().equals(password)) {
             return owner;
         }
         return null;
+    }
+
+    @Override
+    public void deleteOwnerById(Long id) {
+        ownerRepository.deleteById(id);
     }
 }

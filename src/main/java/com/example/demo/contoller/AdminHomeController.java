@@ -15,6 +15,7 @@ import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.service.UserService;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -26,7 +27,7 @@ public class AdminHomeController {
 
     @GetMapping("/")
     public String adminhome(Model model) {
-        List<RepairModel> repairs = repairService.findAll();
+        List<RepairModel> repairs = repairService.findTop10ByFinishDayOfRepairAfter(LocalDateTime.now());
         model.addAttribute(REPAIR_ATTR, repairs);
         return "adminHome";
     }

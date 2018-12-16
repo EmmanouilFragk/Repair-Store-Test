@@ -5,12 +5,13 @@ import com.example.demo.domain.Repair;
 import com.example.demo.models.RepairModel;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface RepairService {
 
     List<RepairModel> findAll();
     List<Repair> findRepairByOwnerId(Long id);
-    //List<Repair> findTop10ByDayOfRepair(LocalDate date);
+    List<RepairModel> findTop10ByFinishDayOfRepairAfter(LocalDateTime date);
     //List<RepairModel> findRepairOrderByDescription();
 }

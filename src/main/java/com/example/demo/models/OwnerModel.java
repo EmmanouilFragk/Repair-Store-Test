@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 public class OwnerModel {
+    private Long id;
     private String taxRegistrationNumber;
     private String firstName;
     private String lastName;
@@ -10,6 +11,9 @@ public class OwnerModel {
     private String carBrand;
     private String carPlate;
     private String userType;
+
+    public OwnerModel() {
+    }
 
     public OwnerModel(String taxRegistrationNumber, String firstName, String lastName, String address, String email, String password, String carBrand, String carPlate, String userType) {
         this.taxRegistrationNumber = taxRegistrationNumber;
@@ -21,6 +25,27 @@ public class OwnerModel {
         this.carBrand = carBrand;
         this.carPlate = carPlate;
         this.userType = userType;
+    }
+
+    public OwnerModel(Long id, String taxRegistrationNumber, String firstName, String lastName, String address, String email, String password, String carBrand, String carPlate, String userType) {
+        this.id = id;
+        this.taxRegistrationNumber = taxRegistrationNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.email = email;
+        this.password = password;
+        this.carBrand = carBrand;
+        this.carPlate = carPlate;
+        this.userType = userType;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTaxRegistrationNumber() {

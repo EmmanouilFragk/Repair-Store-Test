@@ -10,6 +10,9 @@ public class Owner {
     private static final int MAX_NAME_LENGTH  = 50;
     private static final int MIN_PASSWORD_LENGTH = 6;
 
+    public Owner() {
+    }
+
     @Id
     @Column(name = "ownerId", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,7 +48,7 @@ public class Owner {
     @Column(name = "userType")
     private String userType;
 
-    @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
+    @OneToMany(mappedBy = "owner", cascade = {CascadeType.REMOVE}, targetEntity = Repair.class)
     private List<Repair> repairs;
 
     public Long getId() {
@@ -138,6 +141,19 @@ public class Owner {
 
     public void setRepairs(List<Repair> repairs) {
         this.repairs = repairs;
+    }
+
+    public Owner(String taxRegistrationNumber, String firstName, String lastName, String userName, String address, String email, String password, String carBrand, String carPlate, String userType) {
+        this.taxRegistrationNumber = taxRegistrationNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.address = address;
+        this.email = email;
+        this.password = password;
+        this.carBrand = carBrand;
+        this.carPlate = carPlate;
+        this.userType = userType;
     }
 
     @Override

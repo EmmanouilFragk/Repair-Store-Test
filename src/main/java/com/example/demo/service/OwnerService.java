@@ -11,9 +11,13 @@ public interface OwnerService {
 
     Owner findOwnerByUserName(String userName);
 
+    Owner createOrUpdateOwner(Owner owner);
+
     List<OwnerModel> findAll();
 
     Optional<Owner> findOwnerByEmail(String email);
+
+    void deleteOwnerById(Long id);
 
 
 }
