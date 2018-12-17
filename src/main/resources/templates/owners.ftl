@@ -58,18 +58,14 @@
                     </tbody>
                     </table>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <a class="btn pull-right" href="/owners/create">Δημιουργεία Νέου</a>
+                        <a class="btn pull-right" href="/owners/create">Create New Owner</a>
                     </div>
                     <#else>
-                        <p>Δεν βρέθηκαν authors</p>
+                        <p>No Owners Found.</p>
                     </#if>
 
             </div>
         </div>
-    </div>
-
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <a class="btn pull-right" href="/owners/create">Δημιουργεία Νέου</a>
     </div>
 
 <#include "partials/scripts.ftl">

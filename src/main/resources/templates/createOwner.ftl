@@ -82,7 +82,7 @@
                     <div class="form-group">
                         <@spring.bind "ownerForm.carPlate"/>
                             <label for="productName">Car Plate</label>
-                            <input type="text" class="form-control" name="carPlate" id="carPlate"  placeholder="Enter Valid Car Plate" required/>
+                            <input type="text" class="form-control" name="carPlate" id="carPlate"  placeholder="Enter Car Plate" required/>
 
                         <#list spring.status.errorMessages as error>
                             <span class="errorRed">${error}</span>
@@ -102,25 +102,22 @@
                     <div class="form-group">
                         <@spring.bind "ownerForm.password"/>
                             <label for="productName">Password</label>
-                            <input type="text" class="form-control" name="password" id="password"  placeholder="Enter Valid Car Plate" required/>
+                            <input type="text" class="form-control" name="password" id="password"  placeholder="Enter Password" required/>
 
                         <#list spring.status.errorMessages as error>
                             <span class="errorRed">${error}</span>
                         </#list>
                     </div>
 
-                    <div class="form-group">
-                        <@spring.bind "ownerForm.userType"/>
-                            <label for="productName">User Type</label>
-                            <input type="text" class="form-control" name="userType" id="userType"  placeholder="Enter PaaSword" required/>
-
-                        <#list spring.status.errorMessages as error>
-                            <span class="errorRed">${error}</span>
-                        </#list>
-                    </div>
                 </div>
 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <label for="productName">User Type</label>
+                    <select name="userType" id="userType">
+
+                        <option value="Admin">Admin</option>
+                        <option value="Owner">Owner</option>
+                    </select>
                     <button type="submit" class="btn btn-success">Save</button>
                     <button type="reset" id="btn-clear" class="btn btn-danger">Reset</button>
                 </div>
