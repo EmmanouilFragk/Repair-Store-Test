@@ -20,4 +20,6 @@ public interface RepairRepository extends JpaRepository<Repair,Long>{
 
     @Query(value = "SELECT r.* FROM OWNER u INNER JOIN REPAIRS r ON u.ownerId = r.ownerId WHERE r.registrationDayOfRepair = ?1 OR u.taxRegNum = ?2 OR u.carPlate = ?3", nativeQuery = true)
     List<Repair> findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(LocalDate dayOfRepair, String taxRegistrationNumber, String carPlate);
+    void deleteById(Long id);
+    //List<Repair> findRepairOrderByDescription();
 }

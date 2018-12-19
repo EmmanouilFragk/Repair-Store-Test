@@ -83,11 +83,8 @@ public class RepairModel {
         return owner;
     }
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public RepairModel(String description, LocalDateTime registrationDayOfRepair, LocalDateTime finishDayOfRepair, String repairStatus, String repairType, Double serviceCost, String plateNumber, Owner owner) {
+    public RepairModel(Long repairID, String description, LocalDateTime registrationDayOfRepair, LocalDateTime finishDayOfRepair, String repairStatus, String repairType, Double serviceCost, String plateNumber, Owner owner) {
+        this.repairID = repairID;
         this.description = description;
         this.registrationDayOfRepair = registrationDayOfRepair;
         this.finishDayOfRepair = finishDayOfRepair;
@@ -97,4 +94,10 @@ public class RepairModel {
         this.plateNumber = plateNumber;
         this.owner = owner;
     }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+
 }

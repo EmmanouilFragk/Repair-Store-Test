@@ -47,7 +47,14 @@ public class RepairServiceImpl implements RepairService {
 
     }
 
-    //    @Override
+    @Override
+    public void deleteRepairById(Long id) {
+        repairRepository.deleteById(id);
+    }
+}
+
+
+//    @Override
 //    public List<RepairModel> findRepairOrderByDescription() {
 //        return repairRepository
 //                .findRepairOrderByDescription()
