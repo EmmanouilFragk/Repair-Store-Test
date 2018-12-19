@@ -1,8 +1,7 @@
 package com.example.demo.contoller;
 
-import com.example.demo.domain.Owner;
-import com.example.demo.service.OwnerServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.forms.LoginForm;
+import com.example.demo.service.LoginServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,28 +9,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.LoggerFactory;
+
 @Controller
 public class LoginController {
+    private static final String LOGIN_FORM = "loginForm";
+    private final static org.slf4j.Logger LOG = LoggerFactory.getLogger(LoginServiceImpl.class);
 
-    @Autowired
-    private OwnerServiceImpl ownerService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String showLoginForm() {
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    public String login(Model model,
+                        @RequestParam(name = "error", required = false) String error,
+                        HttpSession session) {
+
+        if (error != null) {
+            LOG.error("User not found!");
+            model.addAttribute("errorMessage", "User not found! Please try again");
+        }
+        model.addAttribute(LOGIN_FORM, new LoginForm());
+
         return "login";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String verifyLogin(@RequestParam String userName,
-                              @RequestParam String password,
-                              HttpSession session, Model model) {
-
-        Owner owner = ownerService.loginOwner(userName, password);
-        if (owner == null) {
-            model.addAttribute("loginError", "Error logging in. Please try again.");
-            return "login";
-        }
-        session.setAttribute("loggedinUser", owner);
-        return "redirect:/";
-    }
 }

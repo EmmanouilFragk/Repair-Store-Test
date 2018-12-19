@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.domain.Owner;
 import com.example.demo.domain.Repair;
 import com.example.demo.mappers.RepairToRepairModelMapper;
+import com.example.demo.models.MixedSearchModel;
 import com.example.demo.models.RepairModel;
 import com.example.demo.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,4 +55,14 @@ public class RepairServiceImpl implements RepairService {
 //                .map(repair -> mapper.mapToRepairModel(repair))
 //                .collect(Collectors.toList());
 //    }
+
+
+    @Override
+    public List<RepairModel> findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(MixedSearchModel mixedSearchModel) {
+        return repairRepository
+                .findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(mixedSearchModel.getDayOfRepair(),mixedSearchModel.getTaxRegistrationNumber(),mixedSearchModel.getCarPlate())
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+    }
 }

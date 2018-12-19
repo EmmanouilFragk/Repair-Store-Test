@@ -7,7 +7,7 @@
 
 <body>
 
-    <#include "partials/navbar.ftl">
+    <#include "partials/ownersNavbar.ftl">
 
     <div class="container-fluid">
         <div class="row">
@@ -24,7 +24,7 @@
                         <th>Id</th>
                         <th>Tax Registration Number</th>
                         <th>FirstName</th>
-                        <th>LastName;</th>
+                        <th>LastName</th>
                         <th>Address</th>
                         <th>Email</th>
                         <th>Car Brand</th>
@@ -49,9 +49,10 @@
 
 
                         <td class="text-right">
-                    <a class="btn btn-danger button-delete-confirmation" href="/owners/${owner.id}/delete">Delete
-                        </a>
-                        <button class="btn btn-success" type="submit" value="Edit">Edit</button>
+                            <a class="btn btn-danger button-delete-confirmation" href="/owners/${owner.id}/delete">Delete</a>
+                        </td>
+                        <td class="text-right">
+                            <a class="btn btn-success" href="/owners/${owner.id}/edit">Edit</a>
                         </td>
                         </tr>
                     </#list>

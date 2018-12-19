@@ -7,7 +7,7 @@
 
 <body>
 
-<#include "partials/navbar.ftl">
+<#include "partials/repairsNavbar.ftl">
 
 <div class="container-fluid">
     <div class="row">

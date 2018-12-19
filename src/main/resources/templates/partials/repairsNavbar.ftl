@@ -16,8 +16,9 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/owners">Owners</a></li>
                 <li><a href="/repairs">Repairs</a></li>
-                <#include "search.ftl">
+                <#include "repairSearch.ftl">
             </ul>
+
 
 
         </div>

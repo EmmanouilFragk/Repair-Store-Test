@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.domain.Owner;
 import com.example.demo.domain.Repair;
+import com.example.demo.models.MixedSearchModel;
 import com.example.demo.models.RepairModel;
 
 import java.time.LocalDate;
@@ -13,5 +14,5 @@ public interface RepairService {
     List<RepairModel> findAll();
     List<Repair> findRepairByOwnerId(Long id);
     List<RepairModel> findTop10ByFinishDayOfRepairAfter(LocalDateTime date);
-    //List<RepairModel> findRepairOrderByDescription();
+    List<RepairModel> findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(MixedSearchModel mixedSearchModel);
 }

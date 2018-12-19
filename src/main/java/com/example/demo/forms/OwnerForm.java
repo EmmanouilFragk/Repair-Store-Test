@@ -5,8 +5,6 @@ import javax.validation.constraints.Size;
 
 public class OwnerForm {
 
-    private Long id;
-
     private static final String TAX_REGISTRATION_NUMBER_PATTERN = "[0-9]{9}";
 
     private static final String NAME_PATTERN = "^[a-zA-Z0-9]*$";
@@ -23,14 +21,16 @@ public class OwnerForm {
 
     private static final int PASSWORD_MINSIZE = 8;
 
+    private Long id;
+
     @Pattern(regexp = TAX_REGISTRATION_NUMBER_PATTERN, message = "taxRegNum.empty")
-    private String taxRegNum;
+    private String taxRegistrationNumber;
 
-    @Pattern(regexp = NAME_PATTERN, message = "userFirstName.empty")
-    private String userFirstName;
+    @Pattern(regexp = NAME_PATTERN, message = "firstName.empty")
+    private String firstName;
 
-    @Pattern(regexp = NAME_PATTERN, message = "userLastName.empty")
-    private String userLastName;
+    @Pattern(regexp = NAME_PATTERN, message = "lastName.empty")
+    private String lastName;
 
     @Pattern(regexp = NAME_PATTERN, message = "userName.empty")
     private String userName;
@@ -61,28 +61,28 @@ public class OwnerForm {
         this.id = id;
     }
 
-    public String getTaxRegNum() {
-        return taxRegNum;
+    public String getTaxRegistrationNumber() {
+        return taxRegistrationNumber;
     }
 
-    public void setTaxRegNum(String taxRegNum) {
-        this.taxRegNum = taxRegNum;
+    public void setTaxRegistrationNumber(String taxRegistrationNumber) {
+        this.taxRegistrationNumber = taxRegistrationNumber;
     }
 
-    public String getUserFirstName() {
-        return userFirstName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUserFirstName(String userFirstName) {
-        this.userFirstName = userFirstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getUserLastName() {
-        return userLastName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getUserName() {
@@ -138,6 +138,36 @@ public class OwnerForm {
     }
 
     public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public OwnerForm(Long id, @Pattern(regexp = TAX_REGISTRATION_NUMBER_PATTERN, message = "taxRegNum.empty") String taxRegistrationNumber, @Pattern(regexp = NAME_PATTERN, message = "firstName.empty") String firstName, @Pattern(regexp = NAME_PATTERN, message = "lastName.empty") String lastName, @Pattern(regexp = NAME_PATTERN, message = "userName.empty") String userName, String address, @Pattern(regexp = CAR_BRAND_PATTERN, message = "Invalid Plate Number") String carBrand, @Pattern(regexp = CAR_PLATE_PATTERN, message = "Invalid Plate Number") String carPlate, @Pattern(regexp = MAIL_PATTERN, message = "Invalid Mail") String email, @Pattern(regexp = PASSWORD_PATTERN, message = "Invalid Password") @Size(min = PASSWORD_MINSIZE, message = "Invalid Password Size") String password, @Pattern(regexp = USER_TYPE_PATTERN, message = "Invalid User Type") String userType) {
+        this.id = id;
+        this.taxRegistrationNumber = taxRegistrationNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.address = address;
+        this.carBrand = carBrand;
+        this.carPlate = carPlate;
+        this.email = email;
+        this.password = password;
+        this.userType = userType;
+    }
+
+    public OwnerForm() {
+    }
+
+    public OwnerForm(@Pattern(regexp = TAX_REGISTRATION_NUMBER_PATTERN, message = "taxRegNum.empty") String taxRegistrationNumber, @Pattern(regexp = NAME_PATTERN, message = "firstName.empty") String firstName, @Pattern(regexp = NAME_PATTERN, message = "lastName.empty") String lastName, @Pattern(regexp = NAME_PATTERN, message = "userName.empty") String userName, String address, @Pattern(regexp = CAR_BRAND_PATTERN, message = "Invalid Plate Number") String carBrand, @Pattern(regexp = CAR_PLATE_PATTERN, message = "Invalid Plate Number") String carPlate, @Pattern(regexp = MAIL_PATTERN, message = "Invalid Mail") String email, @Pattern(regexp = PASSWORD_PATTERN, message = "Invalid Password") @Size(min = PASSWORD_MINSIZE, message = "Invalid Password Size") String password, @Pattern(regexp = USER_TYPE_PATTERN, message = "Invalid User Type") String userType) {
+        this.taxRegistrationNumber = taxRegistrationNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.address = address;
+        this.carBrand = carBrand;
+        this.carPlate = carPlate;
+        this.email = email;
+        this.password = password;
         this.userType = userType;
     }
 }

@@ -7,26 +7,24 @@
 -- IF spring.jpa.hibernate.ddl-auto IS SET TO create OR create-drop
 -- IT IS A Hibernate feature (nothing to do with Spring)
 
---INSERT INTO USER (id, firstname, lastname, email, username, password, role) VALUES ('123', 'John', 'Doe', 'john@mail.com', 'johnD', 'pass1234', 'ROLE_USER');
---INSERT INTO USER (id, firstname, lastname, email, username, password, role) VALUES ('124', 'Jane', 'Doe', 'jane@mail.com', 'janeD', 'pass1234', 'ROLE_ADMIN');
 
-INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('123456789','Papadopoulos','George', 'Geopap', 'Kifisias 15', 'gpap@email.com', '1234', 'Toyota', 'ABC-1234', 'Admin');
-INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('223456789','Papadopoulos','Giannis', 'Johnyp', 'Kifisias 17', 'gianpap@email.com', '1234', 'Nissan', 'ABD-1234', 'Owner');
-INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('123456789','Papadopoulos','Antonis', 'Ant',  'Kifisias 19', 'apap@email.com', '1234', 'Audi', 'ABC-1984', 'Owner');
-INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('223456789','Papadopoulos','Manos', 'mpap', 'Kifisias 21', 'mpap@email.com', '1234', 'BMW', 'AGD-1234', 'Owner');
-INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('123456789','Papadopoulou','Eleni', 'epap','Kifisias 23', 'epap@email.com', '1234', 'Toyota', 'ASC-7834', 'Owner');
-INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('223456789','Papadopoulos','Charis', 'chpap', 'Kifisias 25', 'chpap@email.com', '1234', 'Toyota', 'ACD-6534', 'Owner');
-INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('123456789','Papadopoulos','Leonidas', 'leop', 'Kifisias 125', 'lpap@email.com', '1234', 'Toyota', 'MBC-8734', 'Owner');
-INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('223456789','Papadopoulos','Vasilis', 'vpap','Kifisias 157', 'vpap@email.com', '1234', 'Toyota', 'FBD-4574', 'Owner');
 
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-26 15:15:00','2018-12-25 15:15:00','ToDo','Small',88.45,'KYX-8888',1);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-27 15:15:00','2018-12-23 15:15:00','ToDo','Small',88.45,'KYX-8888',2);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-28 15:15:00','2018-12-22 15:15:00','ToDo','Small',88.45,'KYX-8888',2);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-29 15:15:00','2018-12-21 15:15:00','ToDo','Small',88.45,'KYX-8888',4);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-29 15:15:00','2018-12-20 15:15:00','ToDo','Small',88.45,'KYX-8888',5);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-30 15:15:00','2018-12-15 15:15:00','ToDo','Small',88.45,'KYX-8888',5);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-29 15:15:00','2018-12-16 15:15:00','ToDo','Small',88.45,'KYX-8888',6);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-28 15:15:00','2018-12-17 15:15:00','ToDo','Small',88.45,'KYX-8888',3);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-27 15:15:00','2018-12-18 15:15:00','ToDo','Small',88.45,'KYX-8888',1);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-26 15:15:00','2018-12-19 15:15:00','ToDo','Small',88.45,'KYX-8888',1);
+INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('123456789','Mary','Lyraki', 'Mlyr', 'Kifisias 15', 'mlyr@email.com', '12345678', 'Toyota', 'ABC-1234', 'Admin');
+INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('987654321','Emmanouil','Fragkakis', 'Emfrag', 'Kifisias 17', 'emmfrag@email.com', '1234asdc', 'Nissan', 'ABD-1854', 'Owner');
+INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('582963471','Eleni','Papadopoulou', 'Elenp',  'Kifisias 19', 'elpap@email.com', '1234gdhf', 'Audi', 'ABC-1984', 'Owner');
+INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('753216489','Giannis','Ioannou', 'Ggi', 'Kifisias 21', 'iong@email.com', '1d23vd4', 'BMW', 'AGD-1234', 'Owner');
+INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('545689203','Vasilis','Stratis', 'Vasst','Kifisias 23', 'vasstr@email.com', '1as2fds34', 'Citroen', 'ASC-7834', 'Owner');
+INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('785198263','Christos','Mpekris', 'Chmpe', 'Kifisias 25', 'chmpek@email.com', '143rfd234', 'Toyota', 'ACD-6534', 'Owner');
+INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('481237597','Spyros','Diakos', 'Spykos', 'Kifisias 125', 'spdiak@email.com', '1dsfcm234', 'Suzuki', 'MBC-8734', 'Owner');
+INSERT INTO OWNER (taxRegNum, firstName, lastName, userName, address, email, password, carBrand, carPlate, userType) VALUES ('485219637','Ema','Papadaki', 'Empap','Kifisias 157', 'empap@email.com', '12gdh5634', 'Mazda', 'FBD-4574', 'Admin');
+
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ladia','2018-11-26 15:15:00','2018-12-25 15:15:00','ToDo','Small',88.50,'ABC-1234',1);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('lastixa','2018-11-27 15:15:00','2018-12-23 15:15:00','ToDo','Small',108.00,'ABD-1854',2);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('takakia','2018-11-28 15:15:00','2018-12-22 15:15:00','ToDo','Small',50.90,'ABC-1984',3);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ftero','2018-11-29 15:15:00','2018-12-21 15:15:00','ToDo','Small',65.00,'AGD-1234',4);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('diskos','2018-11-29 15:15:00','2018-12-20 15:15:00','ToDo','Small',120.00,'ASC-7834',5);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('frena','2018-11-30 15:15:00','2018-12-15 15:15:00','Ready','Small',154.00,'ACD-6534',6);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('timoni','2018-11-29 15:15:00','2018-12-16 15:15:00','Ready','Small',25.00,'MBC-8734',7);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('saloni','2018-11-28 15:15:00','2018-12-17 15:15:00','Ready','Small',215.00,'FBD-4574',8);
+
 
