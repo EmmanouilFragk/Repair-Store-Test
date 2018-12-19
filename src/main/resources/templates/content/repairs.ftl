@@ -3,7 +3,7 @@
 <table class="table table-striped">
     <thead>
     <tr>
-
+        <th>Id</th>
         <th>Description</th>
         <th>Registration Day</th>
         <th>Finish Day</th>
@@ -17,7 +17,6 @@
     <tbody>
 
     <#list repairs as repair>
-        <tr>
 
         <td> ${repair.description}</td>
         <td> ${repair.registrationDayOfRepair}</td>
@@ -28,8 +27,8 @@
         <td> ${repair.plateNumber}</td>
 
         <td class="text-right">
-            <button class="btn btn-danger button-delete-confirmation" type="submit" value="Delete">Delete
-            </button>
+            <a class="btn btn-danger button-delete-confirmation" href="/repairs/${repair.repairID}/delete">Delete
+            </a>
             <button class="btn btn-success" type="submit" value="Edit">Edit</button>
         </td>
         </tr>

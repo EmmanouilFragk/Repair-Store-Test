@@ -13,5 +13,6 @@ public interface RepairService {
     List<RepairModel> findAll();
     List<Repair> findRepairByOwnerId(Long id);
     List<RepairModel> findTop10ByFinishDayOfRepairAfter(LocalDateTime date);
+    void deleteRepairById(Long id);
     //List<RepairModel> findRepairOrderByDescription();
 }

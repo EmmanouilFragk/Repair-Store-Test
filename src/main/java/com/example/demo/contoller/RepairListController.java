@@ -19,9 +19,9 @@ public class RepairListController {
 
 
     @GetMapping(value = "/repairs")
-    public String authors(Model model) {
+    public String repairs(Model model) {
         List<RepairModel> repairs = repairService.findAll();
         model.addAttribute(REPAIR_ATTR, repairs);
-        return "repairs";
+                return "repairs";
     }
 }
