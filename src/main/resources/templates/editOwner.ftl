@@ -21,7 +21,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group">
                         <@spring.bind "ownerForm.id"/>
-                        <label for="productCode">Tax Registration Number</label>
+                        <label for="productCode">Id</label>
                         <input type="text" class="form-control" name="id" id="id" value="${ownerForm.id}"/>
 
                         <#list spring.status.errorMessages as error>

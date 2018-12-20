@@ -109,7 +109,7 @@
                         </#list>
                     </div>
                     <div class="form-group">
-                        <@spring.bind "ownerForm.password"/>
+                        <@spring.bind "ownerForm.userType"/>
                     <label for="productName">User Type</label>
                     <select name="userType" id="userType">
 

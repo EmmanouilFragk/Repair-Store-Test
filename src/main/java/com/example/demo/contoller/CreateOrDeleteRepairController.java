@@ -66,8 +66,8 @@ public class CreateOrDeleteRepairController {
         CreateRepair createRepair = repairFormToRepairMapper.convertRepair(repairForm);
         repairService.createRepair(createRepair);
 
-        List<RepairModel> ownerList = repairService.findAll();
-        redirectAttributes.addFlashAttribute(REPAIR_ATTR, ownerList);
+        List<RepairModel> repairList = repairService.findAll();
+        redirectAttributes.addFlashAttribute(REPAIR_ATTR, repairList);
 
         return redirect(REPAIR_URL);
     }

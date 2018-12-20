@@ -23,8 +23,8 @@ INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repa
 INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('takakia','2018-11-28 15:15:00','2018-12-22 15:15:00','ToDo','Small',50.90,'ABC-1984',3);
 INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('ftero','2018-11-29 15:15:00','2018-12-21 15:15:00','ToDo','Small',65.00,'AGD-1234',4);
 INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('diskos','2018-11-29 15:15:00','2018-12-20 15:15:00','ToDo','Small',120.00,'ASC-7834',5);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('frena','2018-11-30 15:15:00','2018-12-15 15:15:00','Ready','Small',154.00,'ACD-6534',6);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('timoni','2018-11-29 15:15:00','2018-12-16 15:15:00','Ready','Small',25.00,'MBC-8734',7);
-INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('saloni','2018-11-28 15:15:00','2018-12-17 15:15:00','Ready','Small',215.00,'FBD-4574',8);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('frena','2018-11-30 15:15:00','2018-12-15 15:15:00','In Progress','Small',154.00,'ACD-6534',6);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('timoni','2018-11-29 15:15:00','2018-12-16 15:15:00','Finished','Small',25.00,'MBC-8734',7);
+INSERT INTO Repairs (description,registrationDayOfRepair, finishDayOfRepair,repairStatus,repairType,serviceCost,plateNumber,ownerId) VALUES ('saloni','2018-11-28 15:15:00','2018-12-17 15:15:00','Finished','Small',215.00,'FBD-4574',8);
 
 
