@@ -8,39 +8,49 @@ import java.util.List;
 @Table(name = "OWNER")
 public class Owner {
     private static final int MAX_NAME_LENGTH  = 50;
+    private static final int MIN_PASSWORD_LENGTH = 6;
+
+    public Owner() {
+    }
 
     @Id
-    @Column(name = "owner_id", nullable = false)
+    @Column(name = "ownerId", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "tax_reg_num", length = MAX_NAME_LENGTH)
+    @Column(name = "taxRegNum")
     private String taxRegistrationNumber;
 
-    @Column(name = "firstname", length = MAX_NAME_LENGTH)
+    @Column(name = "firstName")
     private String firstName;
 
-    @Column(name = "lastname", length = MAX_NAME_LENGTH)
+    @Column(name = "lastName")
     private String lastName;
 
-    @Column(name = "address", length = MAX_NAME_LENGTH)
+    @Column(name = "userName")
+    private String userName;
+
+    @Column(name = "address")
     private String address;
 
-    @Column(name = "email", length = MAX_NAME_LENGTH)
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "password", length = MAX_NAME_LENGTH)
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "car_brand", length = MAX_NAME_LENGTH)
+    @Column(name = "carBrand")
     private String carBrand;
 
-    @Column(name = "car_plate", length = MAX_NAME_LENGTH)
+    @Column(name = "carPlate")
     private String carPlate;
 
-    @Column(name = "user_type", length = MAX_NAME_LENGTH)
-    private String userType
-            ;
+    @Column(name = "userType")
+    private String userType;
+
+    @OneToMany(mappedBy = "owner", cascade = {CascadeType.REMOVE}, targetEntity = Repair.class)
+    private List<Repair> repairs;
+
     public Long getId() {
         return id;
     }
@@ -72,6 +82,10 @@ public class Owner {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public String getUserName() { return userName; }
+
+    public void setUserName(String userName) { this.userName = userName; }
 
     public String getAddress() {
         return address;
@@ -121,6 +135,27 @@ public class Owner {
         this.userType = userType;
     }
 
+    public List<Repair> getRepairs() {
+        return repairs;
+    }
+
+    public void setRepairs(List<Repair> repairs) {
+        this.repairs = repairs;
+    }
+
+    public Owner(String taxRegistrationNumber, String firstName, String lastName, String userName, String address, String email, String password, String carBrand, String carPlate, String userType) {
+        this.taxRegistrationNumber = taxRegistrationNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.address = address;
+        this.email = email;
+        this.password = password;
+        this.carBrand = carBrand;
+        this.carPlate = carPlate;
+        this.userType = userType;
+    }
+
     @Override
     public String toString() {
         return "Owner{" +
@@ -128,16 +163,16 @@ public class Owner {
                 ", taxRegistrationNumber='" + taxRegistrationNumber + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", userName='" + userName + '\'' +
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", carBrand='" + carBrand + '\'' +
                 ", carPlate='" + carPlate + '\'' +
+                ", userType='" + userType + '\'' +
+                ", repairs=" + repairs +
                 '}';
     }
-
-
-    //@OneToMany(mappedBy = "author", targetEntity = Book.class)
-    //private List<Book> books;
-
 }
+
+

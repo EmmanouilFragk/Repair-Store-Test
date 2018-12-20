@@ -8,12 +8,18 @@ import java.util.Optional;
 
 public interface OwnerRepository extends JpaRepository <Owner, Long> {
 
-    Optional<Owner> findOwnerByEmail(String email);
+    Owner findOwnerByEmailAndPassword(String email, String password);
 
-    Optional<Owner> findOwnerById(Long id);
+    Owner findOwnerByUserName(String userName);
 
-    List<Owner> getAllOwnersByAddress(String address);
+    Optional<Owner> findOwnerByTaxRegistrationNumber(String tax_reg_num);
 
     void deleteById(Long id);
+    Owner save(Owner user);
+
+    Owner findByEmail(String email);
+    Owner findOwnerById(Long id);
+
+    List<Owner> findByTaxRegistrationNumberOrEmail(String taxRegistrationNumber, String email);
 
 }

@@ -2,15 +2,25 @@ package com.example.demo.service;
 
 
 import com.example.demo.domain.Owner;
+import com.example.demo.forms.OwnerForm;
+import com.example.demo.models.OwnerModel;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface OwnerService {
 
-    Optional<Owner> findOwnerById(Long id);
+    Owner findOwnerById(Long id);
 
-    List<Owner> getAllOwnersByAddress(String address);
+    Owner createOwner(Owner owner);
 
-    Optional<Owner> findOwnerByEmail(String email);
+    List<OwnerModel> findByTaxRegistrationNumberOrEmail(String taxRegistrationNumber, String email);
+
+    List<OwnerModel> findAll();
+
+    Owner update(OwnerForm ownerForm) throws Exception;
+
+    void deleteOwnerById(Long id);
+
+
 }
