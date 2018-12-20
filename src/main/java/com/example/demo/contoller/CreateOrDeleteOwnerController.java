@@ -25,8 +25,7 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 public class CreateOrDeleteOwnerController {
 
     private static final String OWNER_FORM_ATTR = "ownerForm";
-    private static final String OWNERS_ATTR = "owners";
-    private static final String OWNERS_URL = "/owners";
+    private static final String OWNER_URL = "/owners";
     private static final String EDIT_OWNER_TEMPLATE = "editOwner";
     private static final String CREATE_OWNER_TEMPLATE = "createOwner";
     private static final String OWNER_ATTR = "owners";
@@ -44,7 +43,7 @@ public class CreateOrDeleteOwnerController {
         List<OwnerModel> ownerModelList = ownerService.findAll();
         redirectAttributes.addFlashAttribute(OWNER_ATTR, ownerModelList);
 
-        return redirect(OWNERS_URL);
+        return redirect(OWNER_URL);
     }
 
     @GetMapping(value = "/owners/create")
@@ -66,9 +65,9 @@ public class CreateOrDeleteOwnerController {
         ownerService.createOwner(owner);
 
         List<OwnerModel> ownerList = ownerService.findAll();
-        redirectAttributes.addFlashAttribute(OWNERS_ATTR, ownerList);
+        redirectAttributes.addFlashAttribute(OWNER_ATTR, ownerList);
 
-        return redirect(OWNERS_URL);
+        return redirect(OWNER_URL);
     }
 
     private static String redirect(String uri) {

@@ -26,9 +26,10 @@
         <td> ${repair.plateNumber}</td>
 
         <td class="text-right">
-            <button class="btn btn-danger button-delete-confirmation" type="submit" value="Delete">Delete
-            </button>
-            <button class="btn btn-success" type="submit" value="Edit">Edit</button>
+            <a class="btn btn-danger button-delete-confirmation" href="/repairs/${repair.repairID}/delete">Delete</a
+        </td>
+        <td class="text-right">
+            <a class="btn btn-success" href="/repairs/${repair.repairID}/edit">Edit</a>
         </td>
         </tr>
     </#list>

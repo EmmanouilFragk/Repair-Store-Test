@@ -1,15 +1,13 @@
 package com.example.demo.service;
-
-import com.example.demo.domain.Owner;
 import com.example.demo.domain.Repair;
+import com.example.demo.forms.RepairForm;
 import com.example.demo.mappers.RepairToRepairModelMapper;
+import com.example.demo.models.CreateRepair;
 import com.example.demo.models.MixedSearchModel;
 import com.example.demo.models.RepairModel;
 import com.example.demo.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,6 +20,9 @@ public class RepairServiceImpl implements RepairService {
 
     @Autowired
     private RepairToRepairModelMapper mapper;
+
+    @Autowired
+    private OwnerService ownerService;
 
     @Override
     public List<RepairModel> findAll() {
@@ -38,6 +39,11 @@ public class RepairServiceImpl implements RepairService {
     }
 
     @Override
+    public Repair findRepairByRepairId(Long id) {
+        return repairRepository.findByRepairID(id);
+    }
+
+    @Override
     public List<RepairModel> findTop10ByFinishDayOfRepairAfter(LocalDateTime date) {
         return repairRepository
                 .findTop10ByFinishDayOfRepairAfter(date)
@@ -51,23 +57,46 @@ public class RepairServiceImpl implements RepairService {
     public void deleteRepairById(Long id) {
         repairRepository.deleteById(id);
     }
-}
+
+    @Override
+    public void updateRepair(RepairForm repairForm) {
+        Repair repair = repairRepository.findByRepairID(repairForm.getRepairID());
 
 
-//    @Override
-//    public List<RepairModel> findRepairOrderByDescription() {
-//        return repairRepository
-//                .findRepairOrderByDescription()
-//                .stream()
-//                .map(repair -> mapper.mapToRepairModel(repair))
-//                .collect(Collectors.toList());
-//    }
+        repair.setRepairID(repairForm.getRepairID());
+        repair.setDescription(repairForm.getDescription());
+        repair.setFinishDayOfRepair(repairForm.getFinishDayOfRepair());
+        repair.setRegistrationDayOfRepair(repairForm.getRegistrationDayOfRepair());
 
+
+        //    repair.setOwner(.repairForm.getId());
+        //     return repair;
+
+    }
+
+    @Override
+    public void createRepair(CreateRepair createRepair) {
+        Repair repair = new Repair();
+        if (ownerService.findOwnerById(createRepair.getId()) != null) {
+            repair.setOwner(ownerService.findOwnerById(createRepair.getId()));
+            repair.setDescription(createRepair.getDescription());
+            repair.setFinishDayOfRepair(createRepair.getFinishDayOfRepair());
+            repair.setPlateNumber(createRepair.getPlateNumber());
+            repair.setRegistrationDayOfRepair(createRepair.getRegistrationDayOfRepair());
+            repair.setRepairType(createRepair.getRepairType());
+            repair.setServiceCost(createRepair.getServiceCost());
+            repair.setRepairID(createRepair.getRepairID());
+            repair.setRepairStatus(createRepair.getRepairStatus());
+
+
+            repairRepository.save(repair);
+        }
+    }
 
     @Override
     public List<RepairModel> findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(MixedSearchModel mixedSearchModel) {
         return repairRepository
-                .findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(mixedSearchModel.getDayOfRepair(),mixedSearchModel.getTaxRegistrationNumber(),mixedSearchModel.getCarPlate())
+                .findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(mixedSearchModel.getDayOfRepair(), mixedSearchModel.getTaxRegistrationNumber(), mixedSearchModel.getCarPlate())
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());

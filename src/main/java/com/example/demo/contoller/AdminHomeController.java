@@ -18,7 +18,8 @@ import java.util.List;
 public class AdminHomeController {
 
     private static final String REPAIR_ATTR = "repairs";
-    private static final String REPAIRS_URL = "/repairs";
+    private static final String ADMIN_HOME_URL =  "adminHome";
+
     @Autowired
     private RepairService repairService;
 
@@ -27,23 +28,6 @@ public class AdminHomeController {
         List<RepairModel> repairs = repairService.findTop10ByFinishDayOfRepairAfter(LocalDateTime.now());
         model.addAttribute(REPAIR_ATTR, repairs);
         return "adminHome";
-    }
-
-    @GetMapping("/{id}")
-    public String ownerRepairs(@PathVariable(value="id") Long id, Model model) {
-        List<Repair> repairs = repairService.findRepairByOwnerId(id);
-        model.addAttribute(REPAIR_ATTR, repairs);
-        return "ownersrepair";
-    }
-    @GetMapping(value = "/repairs/{id}/delete")
-    public String deleteRepair(@PathVariable Long id, RedirectAttributes redirectAttributes) {
-        repairService.deleteRepairById(id);
-
-        List<RepairModel> repairModelList = repairService.findAll();
-        redirectAttributes.addFlashAttribute(REPAIR_ATTR, repairModelList);
-
-        return redirect (REPAIRS_URL);
-
     }
     private static String redirect(String uri) {
         return String.format("redirect:%s", uri);

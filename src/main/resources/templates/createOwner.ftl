@@ -108,21 +108,25 @@
                             <span class="errorRed">${error}</span>
                         </#list>
                     </div>
-
-                </div>
-
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <@spring.bind "ownerForm.password"/>
                     <label for="productName">User Type</label>
                     <select name="userType" id="userType">
 
                         <option value="Admin">Admin</option>
                         <option value="Owner">Owner</option>
                     </select>
+                        <#list spring.status.errorMessages as error>
+                            <span class="errorRed">${error}</span>
+                        </#list>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Create</button>
+                        <button type="reset" id="btn-clear" class="btn btn-danger">Reset</button>
+                    </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <button type="submit" class="btn btn-success">Create</button>
-                    <button type="reset" id="btn-clear" class="btn btn-danger">Reset</button>
-                </div>
+
 
             </form>
         </div>

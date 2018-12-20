@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import com.example.demo.domain.Owner;
 import com.example.demo.domain.Repair;
+import com.example.demo.forms.RepairForm;
+import com.example.demo.models.CreateRepair;
 import com.example.demo.models.MixedSearchModel;
 import com.example.demo.models.RepairModel;
 
@@ -11,10 +13,13 @@ import java.util.List;
 
 public interface RepairService {
 
+
+    Repair findRepairByRepairId(Long id);
     List<RepairModel> findAll();
     List<Repair> findRepairByOwnerId(Long id);
     List<RepairModel> findTop10ByFinishDayOfRepairAfter(LocalDateTime date);
     List<RepairModel> findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(MixedSearchModel mixedSearchModel);
     void deleteRepairById(Long id);
-    //List<RepairModel> findRepairOrderByDescription();
+    void updateRepair(RepairForm repairForm);
+    void createRepair(CreateRepair createRepair);
 }

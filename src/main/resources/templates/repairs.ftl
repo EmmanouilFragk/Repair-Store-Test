@@ -17,6 +17,10 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
             <#include "content/repairs.ftl">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <a class="btn pull-right" href="/repairs/create">Create New Repair</a>
+            </div>
         </div>
     </div>
 </div>
