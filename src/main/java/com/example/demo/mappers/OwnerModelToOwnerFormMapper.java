@@ -10,7 +10,16 @@ import java.util.stream.Collectors;
 @Component
 public class OwnerModelToOwnerFormMapper {
     public OwnerForm mapToOwnerModel(OwnerModel ownerModel) {
-        OwnerForm ownerForm = new OwnerForm(ownerModel.getTaxRegistrationNumber(), ownerModel.getFirstName(), ownerModel.getFirstName(), ownerModel.getLastName(), ownerModel.getAddress(), ownerModel.getEmail(), ownerModel.getPassword(), ownerModel.getCarBrand(), ownerModel.getCarPlate(), ownerModel.getUserType());
+        OwnerForm ownerForm = new OwnerForm(ownerModel.getTaxRegistrationNumber(),
+                ownerModel.getFirstName(),
+                ownerModel.getFirstName(),
+                ownerModel.getLastName(),
+                ownerModel.getAddress(),
+                ownerModel.getEmail(),
+                ownerModel.getPassword(),
+                ownerModel.getCarBrand(),
+                ownerModel.getCarPlate(),
+                ownerModel.getUserType());
         return ownerForm;
     }
 

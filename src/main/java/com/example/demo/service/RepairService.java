@@ -15,8 +15,8 @@ public interface RepairService {
 
 
     Repair findRepairByRepairId(Long id);
-    List<RepairModel> findAll();
     List<Repair> findRepairByOwnerId(Long id);
+    List<RepairModel> findAll();
     List<RepairModel> findTop10ByFinishDayOfRepairAfter(LocalDateTime date);
     List<RepairModel> findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(MixedSearchModel mixedSearchModel);
     void deleteRepairById(Long id);

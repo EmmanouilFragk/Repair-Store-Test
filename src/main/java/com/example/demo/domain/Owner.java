@@ -18,7 +18,7 @@ public class Owner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "taxRegNum")
+    @Column(name = "taxRegNum", unique = true)
     private String taxRegistrationNumber;
 
     @Column(name = "firstName")
@@ -42,7 +42,7 @@ public class Owner {
     @Column(name = "carBrand")
     private String carBrand;
 
-    @Column(name = "carPlate")
+    @Column(name = "carPlate", unique = true)
     private String carPlate;
 
     @Column(name = "userType")
@@ -170,7 +170,6 @@ public class Owner {
                 ", carBrand='" + carBrand + '\'' +
                 ", carPlate='" + carPlate + '\'' +
                 ", userType='" + userType + '\'' +
-                ", repairs=" + repairs +
                 '}';
     }
 }

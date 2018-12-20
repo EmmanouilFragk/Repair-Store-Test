@@ -10,7 +10,16 @@ import java.util.stream.Collectors;
 @Component
 public class OwnerToOwnerModelMapper {
     public OwnerModel mapToOwnerModel(Owner owner) {
-       OwnerModel ownerModel = new OwnerModel(owner.getId(),owner.getTaxRegistrationNumber(), owner.getFirstName(), owner.getLastName(), owner.getAddress(), owner.getEmail(), owner.getPassword(), owner.getCarBrand(), owner.getCarPlate(), owner.getUserType());
+       OwnerModel ownerModel = new OwnerModel(owner.getId(),
+               owner.getTaxRegistrationNumber(),
+               owner.getFirstName(),
+               owner.getLastName(),
+               owner.getAddress(),
+               owner.getEmail(),
+               owner.getPassword(),
+               owner.getCarBrand(),
+               owner.getCarPlate(),
+               owner.getUserType());
         return ownerModel;
     }
 

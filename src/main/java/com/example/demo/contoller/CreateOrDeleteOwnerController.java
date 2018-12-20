@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -22,10 +19,11 @@ import java.util.List;
 import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
 @Controller
+@RequestMapping("/admin")
 public class CreateOrDeleteOwnerController {
 
     private static final String OWNER_FORM_ATTR = "ownerForm";
-    private static final String OWNER_URL = "/owners";
+    private static final String OWNER_URL = "/admin/owners";
     private static final String EDIT_OWNER_TEMPLATE = "editOwner";
     private static final String CREATE_OWNER_TEMPLATE = "createOwner";
     private static final String OWNER_ATTR = "owners";
@@ -56,7 +54,7 @@ public class CreateOrDeleteOwnerController {
     public String createOwner(Model model, @Valid @ModelAttribute(OWNER_FORM_ATTR) OwnerForm ownerForm, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            //return String.format("/authors/%s/edit", authorForm.getId());
+            //return String.format("/owners/%s/edit", ownerForm.getId());
 
             return EDIT_OWNER_TEMPLATE;
         }

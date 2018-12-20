@@ -1,4 +1,4 @@
-<form action="/repairs/search" class="navbar-form navbar-right" id="searchFormRepairs" name="searchFormRepairs"
+<form action="/admin/repairs/search" class="navbar-form navbar-right" id="searchFormRepairs" name="searchFormRepairs"
 
     <div class="form-group">
         <input class="form-control" type="text" name="taxRegistrationNumber" id="taxRegistrationNumber" placeholder="taxRegistrationNumber">

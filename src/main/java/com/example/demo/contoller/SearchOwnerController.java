@@ -8,26 +8,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-
 import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
 @Controller
+@RequestMapping("/admin")
 public class SearchOwnerController {
     private static final String OWNERS_ATTR = "owners";
 
     @Autowired
     private OwnerService ownerService;
-
-
-    /*@GetMapping(value = "/example")
-    public String search(Model model) {
-        model.addAttribute("searchOwnerForm", new SearchOwnerForm());
-        return "exampleSearch";
-    }*/
 
     @GetMapping(value = "/owners/search")
     public String searchForOwners(Model model,
@@ -49,8 +42,6 @@ public class SearchOwnerController {
         return ownerService.findByTaxRegistrationNumberOrEmail(taxRegistrationNumber, email);
     }
 
-
-    //   @ExceptionHandler({BooksNotFoundException.class})
     public String handleError(HttpServletRequest request,
                               RedirectAttributes redirectAttrs,
                               RuntimeException e) {

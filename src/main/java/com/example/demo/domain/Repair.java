@@ -25,7 +25,7 @@ public class Repair {
     @Column(name = "finishDayOfRepair")
     private LocalDateTime finishDayOfRepair;
 
-    @Column(name = "repairStatus", length =30)
+    @Column(name = "repairStatus")
     private String repairStatus;
 
 
@@ -35,7 +35,7 @@ public class Repair {
     @Column(name="serviceCost",precision=10, scale=2)
     private Double serviceCost;
 
-    @Column(name = "plateNumber",length = 8)
+    @Column(name = "plateNumber",length = 8, unique = true)
     private String plateNumber;
 
     @ManyToOne(optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})

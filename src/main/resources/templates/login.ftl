@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head></head>
 <body>
    <h1>Login</h1>
@@ -6,7 +7,7 @@
           <table>
                  <tr>
                         <td>User:</td>
-                        <td><input type='text' name='userName' value=''></td>
+                        <td><input type='text' name='username' value=''></td>
                      </tr>
                  <tr>
                         <td>Password:</td>

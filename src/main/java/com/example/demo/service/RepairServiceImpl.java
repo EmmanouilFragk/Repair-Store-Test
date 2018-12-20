@@ -25,12 +25,8 @@ public class RepairServiceImpl implements RepairService {
     private OwnerService ownerService;
 
     @Override
-    public List<RepairModel> findAll() {
-        return repairRepository
-                .findAll()
-                .stream()
-                .map(repair -> mapper.mapToRepairModel(repair))
-                .collect(Collectors.toList());
+    public Repair findRepairByRepairId(Long id) {
+        return repairRepository.findByRepairID(id);
     }
 
     @Override
@@ -39,8 +35,12 @@ public class RepairServiceImpl implements RepairService {
     }
 
     @Override
-    public Repair findRepairByRepairId(Long id) {
-        return repairRepository.findByRepairID(id);
+    public List<RepairModel> findAll() {
+        return repairRepository
+                .findAll()
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -54,6 +54,15 @@ public class RepairServiceImpl implements RepairService {
     }
 
     @Override
+    public List<RepairModel> findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(MixedSearchModel mixedSearchModel) {
+        return repairRepository
+                .findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(mixedSearchModel.getDayOfRepair(), mixedSearchModel.getTaxRegistrationNumber(), mixedSearchModel.getCarPlate())
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public void deleteRepairById(Long id) {
         repairRepository.deleteById(id);
     }
@@ -61,17 +70,16 @@ public class RepairServiceImpl implements RepairService {
     @Override
     public void updateRepair(RepairForm repairForm) {
         Repair repair = repairRepository.findByRepairID(repairForm.getRepairID());
-
-
         repair.setRepairID(repairForm.getRepairID());
         repair.setDescription(repairForm.getDescription());
-        repair.setFinishDayOfRepair(repairForm.getFinishDayOfRepair());
-        repair.setRegistrationDayOfRepair(repairForm.getRegistrationDayOfRepair());
-
-
-        //    repair.setOwner(.repairForm.getId());
-        //     return repair;
-
+        /*repair.setFinishDayOfRepair(repairForm.getFinishDayOfRepair());
+        repair.setRegistrationDayOfRepair(repairForm.getRegistrationDayOfRepair());*/
+        repair.setRepairStatus(repairForm.getRepairStatus());
+        repair.setRepairType(repairForm.getRepairType());
+        repair.setServiceCost(repairForm.getServiceCost());
+        repair.setPlateNumber(repairForm.getPlateNumber());
+        repair.setOwner(ownerService.findOwnerById(repairForm.getId()));
+        repairRepository.save(repair);
     }
 
     @Override
@@ -91,14 +99,5 @@ public class RepairServiceImpl implements RepairService {
 
             repairRepository.save(repair);
         }
-    }
-
-    @Override
-    public List<RepairModel> findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(MixedSearchModel mixedSearchModel) {
-        return repairRepository
-                .findByTaxRegistrationNumberOrCarPlateOrDayOfRepair(mixedSearchModel.getDayOfRepair(), mixedSearchModel.getTaxRegistrationNumber(), mixedSearchModel.getCarPlate())
-                .stream()
-                .map(repair -> mapper.mapToRepairModel(repair))
-                .collect(Collectors.toList());
     }
 }

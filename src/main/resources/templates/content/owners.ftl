@@ -31,7 +31,7 @@
 
 
         <td class="text-right">
-            <a class="btn btn-danger button-delete-confirmation" href="/owners/${owner.id}/delete">Delete
+            <a class="btn btn-danger button-delete-confirmation" href="/admin/owners/${owner.id}/delete">Delete
             </a>
             <button class="btn btn-success" type="submit" value="Edit">Edit</button>
         </td>
@@ -41,6 +41,6 @@
     </tbody>
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <a class="btn pull-right" href="/owners/create">Δημιουργεία Νέου</a>
+        <a class="btn pull-right" href="/admin/owners/create">Δημιουργεία Νέου</a>
     </div>
 </table>

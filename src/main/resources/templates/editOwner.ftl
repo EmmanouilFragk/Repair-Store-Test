@@ -15,7 +15,7 @@
             <#include "partials/sidebar.ftl">
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <form class="form-horizontal" action="/owners/edit" method="POST" name="ownerForm" id="ownerForm">
+            <form class="form-horizontal" action="/admin/owners/edit" method="POST" name="ownerForm" id="ownerForm">
                 <h1 class="page-header">Edit Owner</h1>
 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

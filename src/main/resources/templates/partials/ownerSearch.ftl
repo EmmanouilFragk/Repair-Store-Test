@@ -1,4 +1,4 @@
-<form action="/owners/search" class="navbar-form navbar-right" id="searchOwnerForm" name="searchOwnerForm"
+<form action="/admin/owners/search" class="navbar-form navbar-right" id="searchOwnerForm" name="searchOwnerForm"
 
             <div class="form-group">
                 <input class="form-control" type="text" name="taxRegistrationNumber" id="taxRegistrationNumber" placeholder="Tax Number">

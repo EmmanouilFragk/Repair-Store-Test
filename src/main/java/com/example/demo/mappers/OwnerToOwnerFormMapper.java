@@ -7,7 +7,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class OwnerToOwnerFormMapper {
     public OwnerForm convertOwnerToOwnerForm (Owner owner) {
-        return new OwnerForm(owner.getId(), owner.getTaxRegistrationNumber(), owner.getFirstName(), owner.getLastName(),
-                owner.getUserName(), owner.getAddress(), owner.getCarBrand(), owner.getCarPlate(),owner.getEmail(),owner.getPassword(), owner.getUserType());
+        return new OwnerForm(owner.getId(),
+                owner.getTaxRegistrationNumber(),
+                owner.getFirstName(),
+                owner.getLastName(),
+                owner.getUserName(),
+                owner.getAddress(),
+                owner.getCarBrand(),
+                owner.getCarPlate(),
+                owner.getEmail(),
+                owner.getPassword(),
+                owner.getUserType());
     }
 }

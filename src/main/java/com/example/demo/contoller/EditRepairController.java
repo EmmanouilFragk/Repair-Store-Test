@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -23,13 +20,13 @@ import java.util.List;
 import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
 @Controller
+@RequestMapping("/admin")
 public class EditRepairController {
 
-    private static final String REPAIR_ATTR = "repairs";
-    private static final String REPAIR_URL = "/repairs";
     private static final String REPAIR_FORM_ATTR = "repairForm";
-    private static final String CREATE_REPAIR_TEMPLATE = "createRepair";
+    private static final String REPAIR_URL = "/admin/repairs";
     private static final String EDIT_REPAIR_TEMPLATE = "editRepair";
+    private static final String REPAIR_ATTR = "repairs";
 
     @Autowired
     private RepairService repairService;
@@ -54,8 +51,8 @@ public class EditRepairController {
         }*/
         repairService.updateRepair(repairForm);
 
-        List<RepairModel> ownerList = repairService.findAll();
-        redirectAttributes.addFlashAttribute(REPAIR_ATTR, ownerList);
+        List<RepairModel> repairList = repairService.findAll();
+        redirectAttributes.addFlashAttribute(REPAIR_ATTR, repairList);
 
         return redirect(REPAIR_URL);
     }

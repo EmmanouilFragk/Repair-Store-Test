@@ -8,19 +8,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Admin Home</a>
+            <a class="navbar-brand" href="/admin">Admin Home</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar">
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/">Home</a></li>
-                <li><a href="/owners">Owners</a></li>
-                <li><a href="/repairs">Repairs</a></li>
+                <li><a href="/admin">Home</a></li>
+                <li><a href="/admin/owners">Owners</a></li>
+                <li><a href="/admin/repairs">Repairs</a></li>
                 <#include "repairSearch.ftl">
             </ul>
-
-
-
         </div>
     </div>
 </nav>

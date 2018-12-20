@@ -1,6 +1,5 @@
 package com.example.demo.contoller;
 
-import com.example.demo.domain.Repair;
 import com.example.demo.forms.RepairForm;
 import com.example.demo.mappers.RepairFormToRepairMapper;
 import com.example.demo.models.CreateRepair;
@@ -10,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -23,10 +19,11 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
 
 @Controller
+@RequestMapping("/admin")
 public class CreateOrDeleteRepairController {
 
     private static final String REPAIR_ATTR = "repairs";
-    private static final String REPAIR_URL = "/repairs";
+    private static final String REPAIR_URL = "/admin/repairs";
     private static final String REPAIR_FORM_ATTR = "repairForm";
     private static final String CREATE_REPAIR_TEMPLATE = "createRepair";
     private static final String EDIT_REPAIR_TEMPLATE = "editRepair";
@@ -56,12 +53,12 @@ public class CreateOrDeleteRepairController {
 
     @PostMapping(value = "/repairs")
     public String createOwner(Model model, @Valid @ModelAttribute(REPAIR_FORM_ATTR) RepairForm repairForm, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-        /*if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
             //return String.format("/authors/%s/edit", authorForm.getId());
 
             return EDIT_REPAIR_TEMPLATE;
-        }*/
+        }
 
         CreateRepair createRepair = repairFormToRepairMapper.convertRepair(repairForm);
         repairService.createRepair(createRepair);

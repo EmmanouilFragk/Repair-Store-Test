@@ -28,30 +28,8 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<OwnerModel> findAll() {
-        return ownerRepository
-                .findAll()
-                .stream()
-                .map(owner -> mapper.mapToOwnerModel(owner))
-                .collect(Collectors.toList());
-    }
-
-    @Override
     public Owner createOwner(Owner owner) {
         return ownerRepository.save(owner);
-    }
-
-    /*public Owner loginOwner(String userName, String password){
-        Owner owner = this.findOwnerByUserName(userName);
-        if (owner != null && owner.getPassword().equals(password)) {
-            return owner;
-        }
-        return null;
-    }*/
-
-    @Override
-    public void deleteOwnerById(Long id) {
-        ownerRepository.deleteById(id);
     }
 
     @Override
@@ -79,4 +57,21 @@ public class OwnerServiceImpl implements OwnerService {
                 .map(owner -> mapper.mapToOwnerModel(owner))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<OwnerModel> findAll() {
+        return ownerRepository
+                .findAll()
+                .stream()
+                .map(owner -> mapper.mapToOwnerModel(owner))
+                .collect(Collectors.toList());
+    }
+
+
+
+    @Override
+    public void deleteOwnerById(Long id) {
+        ownerRepository.deleteById(id);
+    }
+
 }

@@ -17,7 +17,7 @@
         </div>
 
 
-        <form action="/owners/search" class="navbar-form navbar-right" id="searchOwnerForm" name="searchOwnerForm"
+        <form action="/admin/owners/search" class="navbar-form navbar-right" id="searchOwnerForm" name="searchOwnerForm"
               style="margin-left:37%; float: none!important;">
         </form>
 
@@ -56,7 +56,7 @@
                     <td> ${owner.userType}</td>
 
                     <td class="text-right">
-                <a class="btn btn-success" href="/owners/${owner.id}/edit">Edit</a>
+                <a class="btn btn-success" href="/admin/owners/${owner.id}/edit">Edit</a>
                     </td>
                     </tr>
                 </#list>

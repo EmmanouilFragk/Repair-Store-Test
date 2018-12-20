@@ -25,7 +25,6 @@
                 <tr>
 
                     <th>Description</th>
-                    <th>Date of Repair</th>
                     <th>Repair Status</th>
                     <th>Repair Type</th>
                     <th>Service Cost</th>
@@ -39,7 +38,7 @@
                     <tr>
 
                     <td> ${repair.description}</td>
-                    <td> ${repair.registrationDayOfRepair}</td>
+
                     <td> ${repair.repairStatus}</td>
                     <td> ${repair.repairType}</td>
                     <td> ${repair.serviceCost}</td>

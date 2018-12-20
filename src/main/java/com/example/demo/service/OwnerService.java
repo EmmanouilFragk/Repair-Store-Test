@@ -11,15 +11,10 @@ import java.util.Optional;
 public interface OwnerService {
 
     Owner findOwnerById(Long id);
-
     Owner createOwner(Owner owner);
-
-    List<OwnerModel> findByTaxRegistrationNumberOrEmail(String taxRegistrationNumber, String email);
-
-    List<OwnerModel> findAll();
-
     Owner update(OwnerForm ownerForm) throws Exception;
-
+    List<OwnerModel> findByTaxRegistrationNumberOrEmail(String taxRegistrationNumber, String email);
+    List<OwnerModel> findAll();
     void deleteOwnerById(Long id);
 
 

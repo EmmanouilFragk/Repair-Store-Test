@@ -19,7 +19,7 @@
             <#include "content/repairs.ftl">
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <a class="btn pull-right" href="/repairs/create">Create New Repair</a>
+                <a class="btn pull-right" href="/admin/repairs/create">Create New Repair</a>
             </div>
         </div>
     </div>

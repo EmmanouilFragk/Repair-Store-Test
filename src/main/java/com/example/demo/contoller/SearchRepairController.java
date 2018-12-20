@@ -11,14 +11,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
 @Controller
+@RequestMapping("/admin")
 public class SearchRepairController {
 
     private static final String REPAIRS_ATTR = "repairs";
@@ -28,13 +29,6 @@ public class SearchRepairController {
 
     @Autowired
     private SearchFormRepairToMixedModel mapper;
-
-
-    /*@GetMapping(value = "/repair")
-    public String search(Model model) {
-        model.addAttribute("searchFormRepairs", new SearchFormRepair());
-        return "repairSearch";
-    }*/
 
     @GetMapping(value = "/repairs/search")
     public String searchForRepairs(Model model,
@@ -53,7 +47,6 @@ public class SearchRepairController {
     }
 
 
-    //   @ExceptionHandler({BooksNotFoundException.class})
     public String handleError(HttpServletRequest request,
                               RedirectAttributes redirectAttrs,
                               RuntimeException e) {

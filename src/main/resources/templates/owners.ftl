@@ -49,17 +49,17 @@
 
 
                         <td class="text-right">
-                            <a class="btn btn-danger button-delete-confirmation" href="/owners/${owner.id}/delete">Delete</a>
+                            <a class="btn btn-danger button-delete-confirmation" href="/admin/owners/${owner.id}/delete">Delete</a>
                         </td>
                         <td class="text-right">
-                            <a class="btn btn-success" href="/owners/${owner.id}/edit">Edit</a>
+                            <a class="btn btn-success" href="/admin/owners/${owner.id}/edit">Edit</a>
                         </td>
                         </tr>
                     </#list>
                     </tbody>
                     </table>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <a class="btn pull-right" href="/owners/create">Create New Owner</a>
+                        <a class="btn pull-right" href="/admin/owners/create">Create New Owner</a>
                     </div>
                     <#else>
                         <p>No Owners Found.</p>
